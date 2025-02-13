@@ -4,14 +4,17 @@ Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da
 
 Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da escola **Vai na Web**, com o objetivo de aprimorar habilidades técnicas e boas práticas no desenvolvimento web. Utilizando **React**, exploramos seus principais recursos para criar uma aplicação dinâmica, eficiente e responsiva.  
 
-## 🛠️ Tecnologias Utilizadas  
+## 🚀 Tecnologias Utilizadas  
 
-- ⚛️ **React.js** – Biblioteca para construção de interfaces dinâmicas  
-- 🟡 **JavaScript (ES6+)** – Lógica e manipulação da aplicação  
-- 🎨 **HTML5 & CSS3** – Estrutura e estilos responsivos  
-- 🔄 **Gerenciamento de Estado** – Context API, Redux ou Hooks  
-- 🔗 **Integração com APIs** – Consumo de dados externos  
-- 🛠️ **Git & GitHub** – Versionamento e colaboração  
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **React.js** – Biblioteca para construção de interfaces dinâmicas e componentizadas.  
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript (ES6+)** – Utilização de recursos modernos da linguagem para uma aplicação eficiente.  
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) **HTML5** – Estruturação semântica para melhor acessibilidade e SEO.  
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) **CSS3** – Estilização da interface com técnicas modernas.  
+- ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) **Sass (SCSS)** – Pré-processador CSS para organização modular e reutilização de estilos.  
+  
+- ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) **Git** – Controle de versão para rastreamento de mudanças.  
+- ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) **GitHub** – Plataforma para hospedagem e colaboração no código.  
+ 
 
 ## 🎯 Objetivos do Projeto  
 
