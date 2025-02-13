@@ -4,8 +4,6 @@ Sistema de Emissão de Boletos e  Parcelamentos
 
 Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da escola **Vai na Web**, com o objetivo de aprimorar habilidades técnicas e boas práticas no desenvolvimento web. Utilizando **React**, exploramos seus principais recursos para criar uma aplicação dinâmica, eficiente e responsiva.  
 
-Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da escola **Vai na Web**, com o objetivo de aprimorar habilidades técnicas e boas práticas no desenvolvimento web. Utilizando **React**, exploramos seus principais recursos para criar uma aplicação dinâmica, eficiente e responsiva.  
-
 ## 🚀 Tecnologias Utilizadas  
 
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **React.js** – Biblioteca para construção de interfaces dinâmicas e componentizadas.  
