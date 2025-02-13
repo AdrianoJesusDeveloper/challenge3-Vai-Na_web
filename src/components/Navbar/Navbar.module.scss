@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  width: 9.1vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .navegacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      margin-top: 1.1rem;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0844c4;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #0844C4;
+    }
+  }
+  .btnMenu {
+    background-color: #0844C4;
+    margin-top: 1.1rem;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+  }
+  .botaoSair {
+    background-color: #63758d;
+    margin-top: 1.1rem;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+  }
+}

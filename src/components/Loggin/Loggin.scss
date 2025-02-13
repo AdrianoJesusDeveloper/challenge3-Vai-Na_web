@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.Capa {
+    background-image: url(../../img/navio_capa.png);
+    width: 80%;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.Logo {
+    background-image: url(../../img/logo-ws.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;    
+    height: 100vh; // Corrigido para incluir a unidade
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40vh;
+    align-items: center;
+    font-family: 'inter', sans;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:  #0844c4;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    
+}
+
+.Username  {
+    height: 3vh;
+    width: 43%;
+    border: 0.8px solid #cbd4e1;
+    border-radius: 6px;
+    margin-bottom:0.5rem;
+    height: 5vh;
+    
+}
+.Password {
+    height: 3vh;
+    width: 43%;
+    border: 0.8px solid #cbd4e1;
+    border-radius: 6px;
+    margin-bottom:0.5rem;
+    height: 5vh;
+}
+    
+
+input:hover {
+    border: 0.8px solid #001a3d;
+}
+input:focus {
+    border: 0.8px solid #0844c4;
+    box-shadow: 0 0 0 0.3rem #cbd4e1;
+}
+a {
+    text-decoration: none;
+}
+.btn {
+    display: flex;   
+    flex-direction: row;
+    justify-content: center;
+    padding: 4px;
+    gap: 4px;
+    border-radius: 4px;
+    width: 30%;
+    box-shadow: none;
+}
+
+.Entrar {
+    background-color: #001a3d;
+    width: 5vw;
+    height: 5.6vh;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 200;
+    
+}
+
+.CriarConta {
+    background-color: #00bedd;
+    width: 15vw;
+    height: 5.6vh;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 200;
+    border: none;
+} 
+.CriarConta:hover {
+    background: #00ACC7;
+}
+
+
+
+
+    
