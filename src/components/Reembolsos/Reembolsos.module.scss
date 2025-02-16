@@ -1,19 +1,83 @@
-.container {
+.Principal {
   display: flex;
-  .header {
+  .Reembolsos {
+    width: 100%;
+    height: 100 Vh;
     display: flex;
-    height: 2vh;
-    margin-top: 1rem;
-    .home {
-      margin-left: 20px;
-    }
-    .vector{
-        background-color: #fff;
-        color: black;
-        font-weight: 900;
-    }
-    .titulo{
-        color: #000;
+    flex-direction: column;
+    height: 95vh;
+    align-items: start;
+  }
+  .Header {
+    width: 9.3vw;
+    height: 3.13vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+  }
+  .containerPrincipal {
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .Container {
+      display: center;
+      width: 58.375vw;
+      height: 64.7;
+      flex-direction: column;
+      justify-content: center;
+      padding: 13px;
+      
+      
+      .containerCards {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 27.3vh;
+        width: 58.3vw;
+        padding: 10px, 10px;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        article {
+          width: 18.12vw;
+          height: 27.3vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: solid #cbd4e1 0.8px;
+          border-radius:6px;
+          
+        }
+      }
+      .containerSatus{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items: center;
+        width:58.4vw;
+        height: 10vh;
+        border: solid  #cbd4e1  0.8px;
+        top: vh; 
+        right: 4vw;
+        left: 4 vw;
+        bottom: 4.1 vh;
+        border-radius: 6px;
+        padding: 13px;
+        gap: 64px;
+        div{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width:10vw;
+          height: 4.7vh;
+          
+        }
+      }
     }
   }
 }
