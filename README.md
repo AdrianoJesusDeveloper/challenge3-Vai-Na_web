@@ -1,6 +1,6 @@
-# 🚀 Projeto SIPAR | Vai na Web 
+# 🚀 Projeto SIPAR | Vai na Web
 
-Sistema de Emissão de Boletos e  Parcelamentos 
+Sistema de Emissão de Boletos e  Parcelamentos
 
 Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da escola **Vai na Web**, com o objetivo de aprimorar habilidades técnicas e boas práticas no desenvolvimento web. Utilizando **React**, exploramos seus principais recursos para criar uma aplicação dinâmica, eficiente e responsiva.  
 
@@ -14,7 +14,6 @@ Este projeto foi desenvolvido durante o curso de **Desenvolvedor Full-Stack** da
   
 - ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) **Git** – Controle de versão para rastreamento de mudanças.  
 - ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) **GitHub** – Plataforma para hospedagem e colaboração no código.  
- 
 
 ## 🎯 Objetivos do Projeto  
 
