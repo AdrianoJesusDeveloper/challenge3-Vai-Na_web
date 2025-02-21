@@ -5,8 +5,12 @@ import Navbar from "../Navbar/Navbar.jsx";
 import solicitarReembolso from "../../img/btnSolicitareembolso.png";
 import VerificarAnalises from "../../img/VerificarAnalises.png";
 import HistoricoReembolso from "../../img/HistoricoReembolso.png";
-// import NumeroAprovados from '../../img/N-Aprovados.png'
-// import NumeroAprovados from '../../img/N-Aprovados.png'
+import Solicitados  from '../../img/Solicitados.png'
+import Analises from '../../img/Analises1.png'
+import Aprovados  from '../../img/N-Aprovados.png'
+import Rejeitados  from '../../img/N-Rejeitados.png'
+import Sistema from '../../img/Sistema-atualizado.png'
+
 
 function Reembolsos() {
   return (
@@ -47,26 +51,31 @@ function Reembolsos() {
             </section>
             <section className={styles.containerSatus}>
             <div>
-                <img src="" alt="" />
+                <img src={Solicitados} className={styles.numSolicitados} alt="" />
                 <h4>182</h4>
                 <p>solicitados</p>
               </div>              
               <div>
-                <img src="" alt="" />
+                <img src={Analises} className={styles.numEmAnalise} alt="" />
                 <h4>74</h4>
                 <p>Em análise</p>
               </div>
               <div>
-                <img src="" alt="" />
+                <img src={Aprovados} className={styles.numAprovados} alt="" />
                 <h4>195</h4>
                 <p>Aprovados</p>
               </div>
               <div>
-                <img src="" alt="" />
+                <img src={Rejeitados} className={styles.numRejeidados} alt="" />
                 <h4>41</h4>
                 <p>Rejeitados </p>
               </div>
             </section>
+            <div className={styles.StatusSistema}>
+              <img src={Sistema} alt="icone de  status do sistema " />
+              <p>Sistema atualizado</p>
+
+            </div>
               
 
           </section>
