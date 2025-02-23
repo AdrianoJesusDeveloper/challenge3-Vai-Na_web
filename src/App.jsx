@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loggin from "./components/Loggin/Loggin.jsx";
 import Reembolsos from "./components/Reembolsos/Reembolsos.jsx";
 import Solicitacao from "./components/solicitacao/Solicitacao.jsx";
-import "./globals.scss";
+import "./global.scss";
 
 
 function App() {

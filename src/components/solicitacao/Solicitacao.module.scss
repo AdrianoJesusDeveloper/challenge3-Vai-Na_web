@@ -1,5 +1,7 @@
 .telaPrincipal {
+  width: 100%;
   display: flex;
+
   .Header {
     width: 13.3vw;
     height: 3.13vh;
@@ -7,108 +9,427 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
   }
   .containerPedido {
-    width: 100%;
+    width: 95vw;
     height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: start;
-    .containerForms{
+    .containerForms {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 23vh;
+      gap: 2vw;
+
+      .formEsquerdo {
+        width: 40vw;
+        height: 25.5vh;
         display: flex;
-        justify-content: space-evenly;
-        width: 1792;
-        height: 180;
-        gap: 3.5vw;
-        .formEsquerdo{
-            width: 100%;
-            height: 25.5vh;
-            margin: 0;
-            padding: 0;
+        flex-direction: column;
+
+        .formGrupoUm {
+          width: 41.6vw;
+          height: 9.5vh;
+          display: flex;
+          justify-content: space-around;
+          gap: 3.5vw;
+
+          .campoNome {
             display: flex;
             flex-direction: column;
-            width: 99%;
-            height: 23.5vh;
-            
-            .formGrupoUm {
-              width: 41.6vw;
-              height: 9.5vh;
+            height: 9vh;
+            width: 18vw;
+
+            .labelNome {
+              width: 23vw;
+              height: 2.5vh;
               display: flex;
-              justify-content: space-around;
-              gap: 3.5vw;
-      
-              .campoNome {
-                display: flex;
-                flex-direction: column;
-                height: 9vh;
-                width: 18vw;
-      
-                .labelNome {
-                  width: 23vw;
-                  height: 2.5vh;
-                  display: flex;
-                }
-                .inputNome {
-                  width: 20vw;
-                  height: 3.5vh;
-                  display: flex;
-                  border-radius: 0.5vh;
-                  border: 0.8px solid #cbd4e1;
-                }
-              }
-              .campoEmpresa {
-                width: 8vw;
-                height: 9vh;
-                display: flex;
-                flex-direction: column;
-                .labelEmpresa {
-                  width: 23vw;
-                  height: 2.5vh;
-                  display: flex;
-                }
-                .inputEmpresa {
-                  width: 10vw;
-                  height: 3.5vh;
-                  display: flex;
-                  border-radius: 0.5vh;
-                  border: 0.8px solid #cbd4e1;
-                }
-              }
-              .prestarContas {
-                width: 8vw;
-                height: 9vh;
-                display: flex;
-                flex-direction: column;
-                .labelPrestarContas {
-                  width: 23vw;
-                  height: 2.5vh;
-                  display: flex;
-                }
-                .inputPrestarContas {
-                  width: 8vw;
-                  height: 3.5vh;
-                  border-radius: 0.5vh;
-                  border: 0.8px solid #cbd4e1;
-                }
-              }
             }
-            .formDescMotivo {
-              width: 41.6vw;
-              height: 11.7vh;
+            .inputNome {
+              width: 20vw;
+              height: 3.5vh;
               display: flex;
-              flex-direction: column;
-              .inputDescMotivo {
-                width: 41.6vw;
-                height: 7.9vh;
-                border-radius: 0.5vh;
-                border: 0.8px solid #cbd4e1;
-              }
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
             }
           }
-        
+          .campoEmpresa {
+            width: 8vw;
+            height: 9vh;
+            display: flex;
+            flex-direction: column;
+            .labelEmpresa {
+              width: 23vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputEmpresa {
+              width: 10vw;
+              height: 3.5vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .prestarContas {
+            width: 8vw;
+            height: 9vh;
+            display: flex;
+            flex-direction: column;
+            .labelPrestarContas {
+              width: 23vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputPrestarContas {
+              width: 8vw;
+              height: 3.5vh;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+        }
+        .formDescMotivo {
+          width: 41.6vw;
+          height: 11.7vh;
+          display: flex;
+          flex-direction: column;
+          .inputDescMotivo {
+            width: 41.6vw;
+            height: 7.9vh;
+            border-radius: 0.5vh;
+            border: 0.8px solid #cbd4e1;
+          }
+        }
+      }
+      .barraLateral {
+        width: 0.1vw;
+        height: 20.2vh;
+        background-color: #cbd4e1;
+        border-style: solid 0.8px;
+      }
+      .formDireito {
+        width: 50vw;
+        height: 23vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+        margin-left: -2vw;
+
+        .Data {
+          width: 10vw;
+          height: 9.5vh;
+          display: flex;
+          margin-left: 0.5vw;
+          .labelData {
+            width: 23vw;
+            height: 2.5vh;
+            display: flex;
+          }
+          .inputData {
+            width: 10vw;
+            height: 3.5vh;
+            display: flex;
+            border-radius: 0.5vh;
+            border: 0.8px solid #cbd4e1;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .tipoDespesa {
+          width: 17vw;
+          height: 9.5vh;
+          display: flex;
+          .labelTipoDespesa {
+            width: 23vw;
+            height: 2.5vh;
+            display: flex;
+          }
+          .inputTipoDespesa {
+            width: 15vw;
+            height: 3.5vh;
+            display: flex;
+            border-radius: 0.5vh;
+            border: 0.8px solid #cbd4e1;
+          }
+        }
+
+        .centDeCusto {
+          width: 17vw;
+          height: 9.5vh;
+          display: flex;
+          .labelCentDeCusto {
+            width: 17vw;
+            height: 2.5vh;
+            display: flex;
+          }
+          .inputCentDeCusto {
+            width: 17vw;
+            height: 3.5vh;
+            display: flex;
+            border-radius: 0.5vh;
+            border: 0.8px solid #cbd4e1;
+          }
+        }
+        .campoInferiores {
+          display: flex;
+          width: 41vw;
+          height: 9.5vh;
+          gap: 0.5vw;
+
+          .ordInt {
+            width: 3.5vw;
+            height: 9.5vh;
+            display: flex;
+            margin-left: 0.5vw;
+            .labelOrdInt {
+              width: 3.5vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputOrdInt {
+              width: 3.5vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .Div {
+            width: 3.5vw;
+            height: 9.5vh;
+            display: flex;
+            .labelDiv {
+              width: 3.5vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputDiv {
+              width: 3.5vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .Pep {
+            width: 3.5vw;
+            height: 9.5vh;
+            display: flex;
+            .labelPep {
+              width: 3.5vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputPep {
+              width: 3.5vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .Moeda {
+            width: 4vw;
+            height: 9.5vh;
+            display: flex;
+            .labelMoeda {
+              width: 3.37;
+              height: 2.45vh;
+              display: flex;
+            }
+            .inputMoeda {
+              width: 4vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .distKm {
+            width: 4vw;
+            height: 5.8;
+            display: flex;
+            .labelDistKm {
+              width: 7vw;
+              height: 2.5vh;
+            }
+            .inputDistKm {
+              width: 4vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .valorKm {
+            width: 4.5vw;
+            height: 9.5vh;
+            display: flex;
+            .labelValorKm {
+              width: 2.5vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputValorKm {
+              width: 4.5vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .valFaturado {
+            width: 4vw;
+            height: 9.5vh;
+            display: flex;
+            .labelValFaturado {
+              width: 4vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputValFaturado {
+              width: 4vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+          .Despesa {
+            width: 4vw;
+            height: 9.5vh;
+            display: flex;
+            .labelDespesa {
+              width: 4.5vw;
+              height: 2.5vh;
+              display: flex;
+            }
+            .inputDespesa {
+              width: 4vw;
+              height: 5.8vh;
+              display: flex;
+              border-radius: 0.5vh;
+              border: 0.8px solid #cbd4e1;
+            }
+          }
+        }
+        .Buttons {
+          width: 9.8vw;
+          height: 5.8vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 0.5vw;
+          .buttomSalvar {
+            width: 4.5vw;
+            height: 5.8vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e90ff;
+            border-radius: 0.5vh;
+            margin-top: 2.5vh;
+            gap: 8px;
+            border-radius: 6px;
+            background-color: #001a3d;
+            color: #ffffff;
+            font-size: 2vh;
+            font-weight: 700;
+          }
+          .buttomEnviar {
+            width: 3vw;
+            height: 5.8vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00bedd;
+            border-radius: 0.5vh;
+            margin-top: 2.5vh;
+            gap: 8px;
+            border-radius: 6px;
+            background-color: #00bedd;
+            color: #ffffff;
+            font-size: 2vh;
+            font-weight: 700;
+          }
+        }
+      }
     }
-    
-    
+  }
+  .tableContainer {
+    width: 100%;
+    height: 45vh;
+    overflow-x: auto;
+    border-radius: 5px;
+    background: white;
+    border: solid 0.8px #cbd4e1;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead {
+      background-color: #e6e6e6;
+    }
+    thead {
+      background-color: #e6e6e6;
+    }
+    thead {
+      background-color: #e6e6e6;
+    }
+  
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      white-space: nowrap;
+    }
+  
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+  
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  
+
+  thead {
+    background-color: #e6e6e6;
+  }
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
   }
 }
