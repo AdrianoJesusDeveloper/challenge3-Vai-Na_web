@@ -21,7 +21,8 @@
       justify-content: space-evenly;
       width: 95vw;
       height: 23vh;
-      gap: 3.5vw;
+      gap: 1.5vw;
+      margin-left:-1vw ;
 
       .formEsquerdo {
         width: 40vw;
@@ -200,7 +201,7 @@
             }
           }
           .Div {
-            width: 3.5vw;
+            width: 2.5vw;
             height: 9.5vh;
             display: flex;
             .labelDiv {
@@ -209,7 +210,7 @@
               display: flex;
             }
             .inputDiv {
-              width: 3.5vw;
+              width: 2.5vw;
               height: 5.8vh;
               display: flex;
               border-radius: 0.5vh;
@@ -217,16 +218,16 @@
             }
           }
           .Pep {
-            width: 3.5vw;
+            width: 2.5vw;
             height: 9.5vh;
             display: flex;
             .labelPep {
-              width: 3.5vw;
+              width: 2.5vw;
               height: 2.5vh;
               display: flex;
             }
             .inputPep {
-              width: 3.5vw;
+              width: 2.5vw;
               height: 5.8vh;
               display: flex;
               border-radius: 0.5vh;
@@ -284,16 +285,16 @@
             }
           }
           .valFaturado {
-            width: 4vw;
+            width: 7vw;
             height: 9.5vh;
             display: flex;
             .labelValFaturado {
-              width: 4vw;
+              width: 9vw;
               height: 2.5vh;
               display: flex;
             }
             .inputValFaturado {
-              width: 4vw;
+              width: 7vw;
               height: 5.8vh;
               display: flex;
               border-radius: 0.5vh;
@@ -319,14 +320,16 @@
           }
         }
         .Buttons {
-          width: 9.8vw;
+          width: 7vw;
           height: 5.8vh;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           gap: 0.5vw;
+          margin-left: 1vw;
+          
           .buttomSalvar {
-            width: 4.5vw;
+            width: 6.5vw;
             height: 5.8vh;
             display: flex;
             justify-content: center;
@@ -338,11 +341,11 @@
             border-radius: 6px;
             background-color: #001a3d;
             color: #ffffff;
-            font-size: 2vh;
+            font-size: 0.8rem;
             font-weight: 700;
           }
           .buttomEnviar {
-            width: 3vw;
+            width: 2vw;
             height: 5.8vh;
             display: flex;
             justify-content: center;
