@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import styles from "../Reembolsos/Reembolsos.module.scss";
 import Home from "../../assets/Header/botao - Home.png";
 import Vector from "../../assets/Dashboard/Vector.png";
-import Navbar from "../navbar/NavBar.jsx";
+import Navbar from "../../components/Navbar/Navbar.jsx";
 import SolicitarReembolso from "../../assets/Dashboard/SolicitarReembolso.png";
 import NumeroSolicitados from "../../assets/Dashboard/N-Solicitados.png"; // Add the correct path to the image
 import NumeroAnalise from "../../assets/NumeroAnalise.png"; // Add the correct path to the image
