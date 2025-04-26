@@ -1,140 +1,253 @@
 import styles from "./Solicitacao.module.scss";
-import Navbar from "../Navbar/Navbar.jsx";
-import Home from "../../img/homeheader.png";
-import vector from "../../img/Vector.png";
+import { useEffect, useState } from "react"; 
+import Api from "../../Serviçe/Api.jsx"; // Importando a API para fazer requisições
+
+import NavBar from "../Navbar/Navbar";
+import Home from "../../img/Dashboard/home-header.png";
+import Seta from "../../img/Dashboard/Vector.png";
+import Deletar from "../../img/solicitacao/deletar.png";
+import Lixeira from "../../img/solicitacao/lixeira.png";
+import Calendario from "../../img/solicitacao/calendario.png"
+import setaBaixo from "../../img/solicitacao/seta.png"
+import IconeX from "../../img/solicitacao/x.png"
+import Motivo from "../../img/solicitacao/motivo.png"
+import Check from "../../img/solicitacao/check.png"
 
 function Solicitacao() {
+
+  const [colaborador, setColaborador] = useState(""); // Estado para o campo colaborador
+  const [empresa, setEmpresa] = useState(""); // Estado para o campo empresa
+  const [nPrestacao, setnPrestacao] = useState(""); // Estado para o campo número de prestação
+  const [descricao, setDescricao] = useState(""); // Estado para o campo  descrição
+  const [data, setData] = useState(""); // Estado para o campo data
+  // Estado para o campo motivo foi removido porque não está sendo utilizado
+  const [tipoReembolso, setTipoReembolso] = useState(""); // Estado para o campo tipo de reembolso
+  const [centroCusto, setCentroCusto] = useState(""); // Estado para o campo centro de custo
+  const [ordemInterna, setorOrdemInterna] = useState(""); // Estado para o campo ordem interna
+  const [divisao, setDivisao] = useState(""); // Estado para o campo divisão
+  const [pep, setPep] = useState(""); // Estado para o campo pep
+  const [moeda, setMoeda] = useState(""); // Estado para o campo moeda
+  const [distanciaKm, setDistanciaKm] = useState(""); // Estado para o campo distância km
+  const [valorKm, setValorKm] = useState(""); // Estado para o campo valor km
+  const [valorFaturado, setValorFaturado] = useState(""); // Estado para o campo valor faturado
+  const [despesa, setDespesa] = useState(""); // Estado para o campo despesa
+
+  const[dadosReembolso, setDadosReembolso] = useState([]);
+
+  //FUNÇÃO PARA CAPTURAR OS VALORES DOS ESTADOS 
+
+  const handleSubmit = () => {
+    
+    const objetoReembolso = {
+      colaborador,
+      empresa,
+      nPrestacao,
+      descricao,
+      data,
+      tipoReembolso,
+      ordemInterna,
+      centroCusto,
+      divisao,
+      pep,
+      moeda,
+      distanciaKm,
+      valorKm,
+      valorFaturado,
+      despesa
+    };
+    setDadosReembolso( dadosReembolso.concat(objetoReembolso));
+    limparCampos();
+  };
+ //limpar campos dos inputs 
+  const limparCampos = () => {
+    setColaborador(""),
+    setEmpresa(""),
+    setnPrestacao(""),
+    setDescricao(""),
+    setData(""),
+    // Removido porque o estado 'motivo' não está sendo utilizado
+    setTipoReembolso(""),
+    setCentroCusto(""),
+    setorOrdemInterna(""),
+    setDivisao(""),
+    setPep(""),
+    setMoeda(""),
+    setDistanciaKm(""),
+    setValorKm(""),
+    setValorFaturado(""),
+    setDespesa("");
+  };
+
+  // FUNÇÃO PARA ENIVAR DADOS PARA API
+  const [ foiEnviado, setFoiEnviado ] = useState (false); // Serve para saber se o formulário foi envIADO
+
+  // FUNCAÇÃO ASYNC(assincrona) permite que o codigo espere algo(resposta do servidor) sem travar o programa
+  const enviarParaAnalise = async () => {
+    try{
+      //colocamos o que queremos tentar fazer
+
+      // primeiro argumento é o caminhod a rota "/refunds/new" é uma rota do backend
+      // segundo argumento é o que sera enviado: dadosReembolso
+
+      const response = await Api.post("refunds/new", dadosReembolso);
+      console.log("Resposta da API", response) //MOstra no console a resposta da
+      alert("reembolso solicitado com sucesso")
+      setFoiEnviado(true); //ativando o estado "foiEnviado" para true 
+    } catch(error){
+    //caso de erro na hora de enviar, ele mostra o erro no console.log
+    console.log("Erro ao enviar", error) // MOstra erro se algo der errado
+    }
+  };
+
+  //Hook USEEFFECT, serve para reagir a mudança nos estados
+
+  useEffect(() => {
+    if(foiEnviado){
+      setDadosReembolso([]); //Limpa os dados do formulário, ou seja, zera o estado
+        setFoiEnviado(false);
+    }
+
+  }, [foiEnviado]);
+
   return (
-    <section className={styles.telaPrincipal}>
-      <Navbar />
-      <section className={styles.containerPedido}>
-        <section className={styles.Header}>
-          <img src={Home} alt=" icone Home" className={styles.Home} />
-          <img src={vector} className={styles.Vector} alt="icone de seta" />
-          Reembolsos
-          <img src={vector} className={styles.Vector} alt="icone de seta" />
-          Solicitação
-        </section>
+    <div className={styles.layoutSolicitacao}>
+      <NavBar />
+      
+      <div className={styles.containerPrincipalSolicitacao}>
+      <main className={styles.mainSolicitacao}>
+        <header className={styles.headerSolicitacao}>
+          <img src={Home} alt="Botão de home" />
+          <img src={Seta} alt="Seta indicativa do home" />
+          <p>Reembolsos</p>
+          <img src={Seta} alt="" />
+          <p>Solicitação de Reembolso</p>
+        </header>
 
-        <section className={styles.containerForms}>
-          <section className={styles.formEsquerdo}>
-            <section className={styles.formGrupoUm}>
-              <div className={styles.campoNome}>
-                <label className={styles.labelNome}>Nome Completo</label>
-                <input type="text" className={styles.inputNome} />
+          <form  onSubmit={(e) => e.preventDefault() } className={styles.formSolicitacao}>
+
+            <div className={styles.grupo1}>
+              <div className={styles.inputNome}>
+                <label htmlFor="">Nome Completo</label>
+                <input type="text" name="colaborador" value={colaborador} onChange={(e) => setColaborador(e.target.value)}/>
               </div>
-              <div className={styles.campoEmpresa}>
-                <label className={styles.labelEmpresa}>Empresa</label>
-                <input type="text" className={styles.inputEmpresa} />
+
+              <div className={styles.inputEmpresa}>
+                <label htmlFor="">Empresa</label>
+                <input type="text" name="empresa" value={empresa} onChange={(e) => setEmpresa(e.target.value) }/>
               </div>
-              <div className={styles.prestarContas}>
-                <label className={styles.labelPrestarContas}>
-                  N° Prest Contas{" "}
-                </label>
-                <input type="text" className={styles.inputPrestarContas} />
+
+              <div className={styles.inputPrestacao}>
+                <label htmlFor="">Nº Prest. Contas</label>
+                <input type="text" name="numPrestação" value={nPrestacao} onChange={(e) => setnPrestacao(e.target.value)} />
               </div>
-            </section>
 
-            <div className={styles.formDescMotivo}>
-              <label className={styles.labelDescMotivo}>
-                Descrição / Motivo do Reembolso
-              </label>
-              <textarea className={styles.inputDescMotivo}></textarea>
-            </div>
-          </section>
-
-          <div className={styles.barraLateral}></div>
-
-          <section className={styles.formDireito}>
-            <div className={styles.Data}>
-              <label className={styles.labelData}>Data</label>
-              <input type="date" className={styles.inputData} />
+              <div className={styles.inputMotivo}>
+                <label htmlFor=""> Descrição / Motivo do Reembolso </label>
+                <textarea name="" id="">
+                  {" "}
+                </textarea>
+              </div>
             </div>
 
-            <div className={styles.tipoDespesa}>
-              <label className={styles.labelTipoDespesa}>Tipo de Despesa</label>
-              <select className={styles.inputTipoDespesa}>
-                <option selected disabled>
-                  Selecionar
-                </option>
-                <option value="alimentacao">Alimentação</option>
-                <option value="combustivel">Combustível</option>
-                <option value="conducao">Condução</option>
-                <option value="estacionamento">Estacionamento</option>
-                <option value="viagem_admin">Viagem admin.</option>
-                <option value="viagem_operacional">Viagem operacional</option>
-                <option value="eventos">Eventos de representação</option>
-              </select>
+            <div className={styles.barraVertical}></div>
+            <div className={styles.grupo2}>
+
+              <div className={styles.inputData}>
+                <label htmlFor="">Data</label>
+                <img className={styles.imgData}src={Calendario} alt="" />
+                <input type="date" name="" id="" value={data} onChange={(e) => setData(e.target.value)}/>
+              </div>
+
+              <div className={styles.tipoDeDespesa}>
+                <label htmlFor=""> Tipo de Despesa </label>   
+                <img className={styles.imgDespesa} src={setaBaixo} alt="" />          
+
+                <select name="" id="">
+                  <option value=""> Selecionar</option>
+                  <option value="">Alimentação</option>
+                  <option value="">Combustível</option>
+                  <option value="">Condução</option>
+                  <option value="">Estacionamento</option>
+                  <option value="">Viagem Administrativa</option>
+                  <option value="">Viagem Operacional</option>
+                  <option value="">Eventos de representação</option>
+                </select>
+              </div>
+
+              <div className={styles.centroDeCusto}>
+                <label htmlFor="">Centro de Custo</label>
+                <img className={styles.imgCustos}src={setaBaixo} alt="" />
+                <select name="" id="">
+                  <option value="">
+                    1100109002 - FIM CONTROLES INTERNOS MTZ
+                  </option>
+                  <option value="">
+                    1100110002 - FIN VICE-PRESIDENCIA FINANCAS MTZ
+                  </option>
+                  <option value="">1100110101 - FIN CONTABILIDADE MTZ</option>
+                </select>
+                
+              </div>
+
+              <div className={styles.ordem}>
+                <label htmlFor="">Ord. Int.</label>
+                <input type="number" name="" id="" value={ordemInterna} onChange={(e) => setorOrdemInterna(e.target.value)}/>
+              </div>
+
+              <div className={styles.divisoes}>
+                <label htmlFor="">Div.</label>
+                <input type="number" name="" id="" value={divisao} onChange={(e) => setDivisao(e.target.value)}/>
+              </div>
+
+              <div className={styles.pep}>
+                <label htmlFor="">PEP.</label>
+                <input type="number" name="" id="" value={pep} onChange={(e) => setPep(e.target.value)}/>
+              </div>
+
+              <div className={styles.moeda}>
+                <label htmlFor="">Moeda</label>
+                <select name="" id="">
+                  <option value="">Selecionar</option>
+                  <option value="">BRL</option>
+                  <option value="">ARS</option>
+                  <option value="">USD</option>
+                </select>
+              </div>
+
+              <div className={styles.distancia}>
+                <label htmlFor=""> Dist. / KM</label>
+                <input type="text" value={distanciaKm} onChange={(e) => setDistanciaKm(e.target.value)} />
+              </div>
+
+              <div className={styles.valorKM}>
+                <label htmlFor="">Valor / KM</label>
+                <input type="number" name="" id="" value={valorKm} onChange={(e) => setValorKm(e.target.value)}/>
+              </div>
+
+              <div className={styles.valorFaturado}>
+                <label htmlFor="">Val. Faturado</label>
+                <input type="number" name="" id="" value={valorFaturado} onChange={(e) => setValorFaturado(e.target.value)} />
+              </div>
+
+              <div className={styles.despesa}>
+                <label htmlFor="">Valor</label>
+                <input type="number" name="" id="" value={despesa} onChange={(e) => setDespesa(e.target.value)}/>
+              </div>
+
+              <div className={styles.botoes}>
+                <button className={styles.botaoSalvar} onClick={handleSubmit}>+ Salvar</button>
+                <button className={styles.customerDelete} onClick={limparCampos}><img src={Deletar} alt="" /></button>
+              </div>
             </div>
 
-            <div className={styles.centDeCusto}>
-              <label className={styles.labelCentDeCusto}>Centro de Custo</label>
-              <select className={styles.inputCentDeCusto}>
-                <option selected disabled>
-                  Selecionar
-                </option>
-                <option value="1100109002">
-                  1100109002 - FIN CONTROLES INTERNOS MTZ
-                </option>
-                <option value="1100110002">
-                  1100110002 - FIN VICE-PRESIDENCIA FINANCAS MTZ
-                </option>
-                <option value="1100110102">
-                  1100110102 - FIN CONTABILIDADE MTZ
-                </option>
-              </select>
-            </div>
 
-            <section className={styles.campoInferiores}>
-              <div className={styles.ordInt}>
-                <label className={styles.labelOrdInt}>Ord.Inter</label>
-                <input type="text" className={styles.inputOrdInt} />
-              </div>
-              <div className={styles.Div}>
-                <label className={styles.labelDiv}>Div</label>
-                <input type="text" className={styles.inputDiv} />
-              </div>
-              <div className={styles.Pep}>
-                <label className={styles.labelPep}>Pep</label>
-                <input type="text" className={styles.inputPep} />
-              </div>
-              <div className={styles.Moeda}>
-                <label className={styles.labelMoeda}>Moeda</label>
-                <input type="text" className={styles.inputMoeda} />
-              </div>
-              <div className={styles.distKm}>
-                <label className={styles.labelDistKm}>Dist/Km</label>
-                <input type="text" className={styles.inputDistKm} />
-              </div>
-              <div className={styles.valorKm}>
-                <label className={styles.labelValorKm}>Valor/Km</label>
-                <input type="text" className={styles.inputValorKm} />
-              </div>
-              <div className={styles.valorKm}>
-                <label className={styles.labelValorKm}>Valor/Km</label>
-                <input type="text" className={styles.inputValorKm} />
-              </div>
-              <div className={styles.valFaturado}>
-                <label className={styles.labelValFaturado}>
-                  Valor Faturado
-                </label>
-                <input type="text" className={styles.inputValFaturado} />
-              </div>
-              <div className={styles.Despesa}>
-                <label className={styles.labelDespesa}>Despesa</label>
-                <input type="text" className={styles.inputDespesa} />
-              </div>
-              <div className={styles.Buttons}>
-                <div className={styles.buttomSalvar}>+Salvar</div>
-                <div className={styles.buttomEnviar}>Enviar</div>
-              </div>
-            </section>
+          </form>
 
-            <section className={styles.tabela}></section>
-          </section>
-        </section>
-
-        <div className={styles.tableContainer}>
+          {/*tag principal qie vai envolver a tabela */}
+          {/*thread é a tag que agrupa o cabeçalho*/}
+          {/*tr é a linha da tabela*/}
+          {/* tbody agrupa o corpo da tabela*/}
+          <div className={styles.containerTable}>   
           <table>
             <thead>
               <tr>
@@ -144,79 +257,139 @@ function Solicitacao() {
                 <th>Nº Prest.</th>
                 <th>Data</th>
                 <th>Motivo</th>
-                <th>Tipo de despesa</th>
-                <th>Ctr. Custo</th>
+                <th>Tipo De Destepas</th>
+                <th>CTR. Custos</th>
                 <th>Ord. Int.</th>
                 <th>Div.</th>
-                <th>PEP</th>
+                <th>Pep</th>
                 <th>Moeda</th>
-                <th>Dist. Km</th>
-                <th>Val. Km</th>
-                <th>Val. Faturado</th>
+                <th>Dis. KM</th>
+                <th>val faturado</th>
                 <th>Despesa</th>
               </tr>
             </thead>
             <tbody>
+              {dadosReembolso.map((item, index) => (
+                <tr key={index}>
+              <td> </td>
+              <td> {item.colaborador} </td>
+              <td> {item.empresa} </td>
+              <td>{item.nPrestacao}</td>
+              <td>{item.data}</td>
+              <td> </td>
+              <td>{item.tipoReembolso}</td>
+              <td>{item.centroCusto}</td>
+              <td>{item.ordemInterna}</td>
+              <td>{item.divisao}</td>
+              <td>{item.pep}</td>
+              <td>{item.moeda}</td>
+              <td>{item.distanciaKm}</td>
+              <td>{item.valorKm}</td>
+              <td>{item.valorFaturado}</td>
+              <td>{item.despesa}</td>
+              </tr>
+              )) }
               <tr>
-                <td></td>
+                <td>
+                  {" "}
+                  <img src={Lixeira} alt="" />
+                </td>
                 <td>Vitor Carvalho</td>
                 <td>WSS001</td>
                 <td>329456</td>
-                <td>08/01/2025</td>
-                <td>📄</td>
-                <td>Desp. de viagem a...</td>
-                <td>1100110002 - FIN...</td>
+                <td>08/01/82002</td>
+                <td>
+                  {" "}
+                  <img src={Motivo} alt="" />
+                </td>
+                <td>Despesas De viagem</td>
+                <td>11100110002-FIN</td>
                 <td>0003</td>
                 <td>002</td>
                 <td>001</td>
                 <td>BRL</td>
                 <td>434Km</td>
-                <td>0.65</td>
                 <td>242.10</td>
-                <td>40.05</td>
+                <td>40.5</td>
+                
               </tr>
               <tr>
-                <td></td>
-                <td>Vanessa Porto</td>
+                <td>
+                  {" "}
+                  <img src={Lixeira} alt="" />
+                </td>
+                <td>Vanessa Port...</td>
                 <td>WSS002</td>
-                <td>987789</td>
+                <td>997789</td>
                 <td>01/01/2025</td>
-                <td>📄</td>
-                <td>Desp. de viagem a...</td>
-                <td>1100110102 - FIN C...</td>
+                <td>
+                  {" "}
+                  <img src={Motivo} alt="" />
+                </td>
+                <td>Despesas De viagem</td>
+                <td>11100110002-FIN</td>
                 <td>0002</td>
                 <td>005</td>
                 <td>001</td>
                 <td>ARS</td>
                 <td>289Km</td>
-                <td>0.37</td>
                 <td>106.93</td>
-                <td>0.00</td>
+                <td>000</td>
               </tr>
               <tr>
-                <td></td>
-                <td>Washington Klein</td>
-                <td>WSS003</td>
+                <td>
+                  {" "}
+                  <img src={Lixeira} alt="" />
+                </td>
+                <td>Whashington KI...</td>
+                <td>WSS03</td>
                 <td>546791</td>
                 <td>03/01/2025</td>
-                <td>📄</td>
+                <td>
+                  {" "}
+                  <img src={Motivo} alt="" />
+                </td>
                 <td>Eventos de aprese...</td>
-                <td>1100109002 - FIN...</td>
-                <td>0001</td>
-                <td>005</td>
+                <td>11100110002-FIN</td>
                 <td>001</td>
+                <td>001</td>
+                <td>005</td>
                 <td>USD</td>
                 <td>197Km</td>
-                <td>0.75</td>
                 <td>109.75</td>
                 <td>29.97</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
-    </section>
+          </div>
+        </main>
+        <footer className={styles.containerFooter}>
+            <div className={styles.inputFooterFaturado}>
+                <label htmlFor="">Total Faturado</label>
+                <input type="text" />
+            </div>
+            <div className={styles.inputFooterDespesa}>
+                <label htmlFor="">Total Despesa</label>
+                <input type="text" />
+            </div>
+
+            <div>
+              <button className={styles.buttonCheck} onClick={enviarParaAnalise}> 
+                <img src={Check} alt="" />
+                <p>Enviar para Análise</p>
+              </button>
+            </div>
+
+            <div>
+              <button className={styles.buttonX}>
+                <img src={IconeX} alt="" />
+                <p>Cancelar Solicitação</p>
+              </button>
+            </div>
+
+            </footer>
+      </div>
+    </div>
   );
 }
-
 export default Solicitacao;
