@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom"
 import styles from "../Reembolsos/Reembolsos.module.scss";
-import Home from "../../img/Dashboard/home-header.png";
-import Vector from "../../img/Vector.png";
+import Home from "../../assets/Header/botao - Home.png";
+import Vector from "../../assets/Dashboard/Vector.png";
 import Navbar from "../navbar/NavBar.jsx";
-import SolicitarReembolso from "../../img/btnSolicitareembolso.png";
-import NumeroSolicitados from "../../img/NumerosSolicitados.png"; // Add the correct path to the image
-import NumeroAnalise from "../../img/NumeroAnalise.png"; // Add the correct path to the image
-import NumeroAprovados from "../../img/NumeroAprovados.png"; // Add the correct path to the image
-import NumeroRejeitados from "../../img/NumeroRejeitados.png"; // Add the correct path to the image
-import VerificarAnalises from "../../img/VerificarAnalises.png";
-import HistoricoReembolso from "../../img/HistoricoReembolso.png";
-import Sistema from "../../img/Sistema-Atualizado.png"; // Add the correct path to the image
+import SolicitarReembolso from "../../assets/Dashboard/SolicitarReembolso.png";
+import NumeroSolicitados from "../../assets/Dashboard/N-Solicitados.png"; // Add the correct path to the image
+import NumeroAnalise from "../../assets/NumeroAnalise.png"; // Add the correct path to the image
+import NumeroAprovados from "../../assets/NumeroAprovados.png"; // Add the correct path to the image
+import NumeroRejeitados from "../../assets/NumeroRejeitados.png"; // Add the correct path to the image
+import VerificarAnalises from "../../assets/VerificarAnalises.png";
+import HistoricoReembolso from "../../assets/HistoricoReembolso.png";
+import Sistema from "../../assets/Sistema-Atualizado.png"; // Add the correct path to the image
 
 
 

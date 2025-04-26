@@ -1,17 +1,16 @@
 import styles from "./Solicitacao.module.scss";
 import { useEffect, useState } from "react"; 
 import Api from "../../Serviçe/Api.jsx"; // Importando a API para fazer requisições
-
-import NavBar from "../Navbar/Navbar";
-import Home from "../../img/Dashboard/home-header.png";
-import Seta from "../../img/Dashboard/Vector.png";
-import Deletar from "../../img/solicitacao/deletar.png";
-import Lixeira from "../../img/solicitacao/lixeira.png";
-import Calendario from "../../img/solicitacao/calendario.png"
-import setaBaixo from "../../img/solicitacao/seta.png"
-import IconeX from "../../img/solicitacao/x.png"
-import Motivo from "../../img/solicitacao/motivo.png"
-import Check from "../../img/solicitacao/check.png"
+import NavBar from "../../components/navbar/NavBar";
+import Home from "../../assets/Header/botao - Home.png"; // Replace with the correct path to the 'Home' asset
+import Seta from "../../assets/Dashboard/Vector.png";
+import Deletar from "../../assets/solicitacao/deletar.png";
+import Lixeira from "../../assets/solicitacao/lixeira.png";
+import Calendario from "../../assets/solicitacao/calendario.png"
+import setaBaixo from "../../assets/solicitacao/seta.png"
+import IconeX from "../../assets/solicitacao/x.png"
+import Motivo from "../../assets/solicitacao/motivo.png"
+import Check from "../../assets/solicitacao/check.png"
 
 function Solicitacao() {
 

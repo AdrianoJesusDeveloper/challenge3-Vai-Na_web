@@ -10,7 +10,7 @@ main {
   height: 100%;
 
   .Capa {
-    background-image: url(../../img/navio_capa.png);
+    background-image: url(../../assets/tela-login/navio_capa.png);
     width: 63.5%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,7 +25,7 @@ main {
     height: 100vh; // Corrigido para incluir a unidade
 
     .Frame-logo {
-      background-image: url(../../img/logo-ws.png);
+      background-image: url(../../assets/tela-login/logo.png);
       background-position: center;
       background-repeat: no-repeat;
       justify-content: center;
