@@ -9,6 +9,8 @@ import Pesquisa from "/Header/Botão - Pesquisa.png";
 import Reembolso from "/Header/Botão - Reembolso.png";
 import Sair from "/Header/Botão - Sair.png";
 
+
+
 function NavBar() {
 
   const navigate = useNavigate()

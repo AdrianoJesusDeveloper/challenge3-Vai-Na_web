@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom"
+// Duplicate import removed
 import styles from "../Reembolsos/Reembolsos.module.scss";
 import Home from "/Dashboard/home-header.png";
 import Vector from "/Dashboard/Vector.png";
-import Navbar from "../../components/navbar/NavBar.jsx";
+import Navbar from "../../components/navbar/Navbar.jsx";
 import SolicitarReembolso from "/Dashboard/SolicitarReembolso.png";
 import NumeroSolicitados from "/Dashboard/N-Solicitados.png"; // Add the correct path to the image
 import NumeroAnalise from "/Dashboard/N-Análises.png"; // Add the correct path to the image
@@ -33,7 +34,7 @@ function Reembolsos() {
 
               <div className={styles.sisReembolso}>
                   <h1>Sistema de Reembolsos</h1>
-                  <p>Solicite novos pedidos de reembolso, vizualize solicitações em alálise e todo o histórico.</p>
+                  <p>Solicite novos pedidos de reembolso, vizualize solicitações em análise e todo o histórico.</p>
               </div>
 
               <section className={styles.containerCards}>
@@ -81,7 +82,7 @@ function Reembolsos() {
               </section>
 
               <section className={styles.containerSistema}>
-                  <img src={Sistema} alt="logo Sistema atualuzado" />
+                  <img src={Sistema} alt="logo do Sistema atualizado" />
                   <a href="">Sistema Atualizado</a>
               </section>
           </main>

@@ -1,7 +1,7 @@
 import styles from "./Solicitacao.module.scss";
 import { useEffect, useState } from "react"; 
 import Api from "../../Serviçe/Api.jsx"; // Importando a API para fazer requisições
-import NavBar from "../../components/navbar/NavBar";
+import Navbar from "../../components/navbar/Navbar.jsx";
 import Home from "/Dashboard/home-header.png"; // Replace with the correct path to the 'Home' asset
 import Seta from "/Dashboard/Vector.png";
 import Deletar from "/solicitacao/deletar.png";
@@ -110,7 +110,7 @@ function Solicitacao() {
 
   return (
     <div className={styles.layoutSolicitacao}>
-      <NavBar />
+      <Navbar />
       
       <div className={styles.containerPrincipalSolicitacao}>
       <main className={styles.mainSolicitacao}>
