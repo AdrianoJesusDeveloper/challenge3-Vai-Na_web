@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
-import FecharHeader from "../../assets/imagem-fechar-header.png";
-import People from "../../assets/eu.jpg";
-import Home from "../../assets/Home.png";
-import Historico from "../../assets/btnHistorico.png";
-import Pesquisa from "../../assets/Pesquisa.png";
-import Reembolso from "../../assets/btnReembolso.png";
-import Sair from "../../assets/btnsair.png";
+import FecharHeader from "/Header/imagem-fechar-header.png";
+import People from "/Header/image.png";
+import Home from "/Header/botao - Home.png";
+import Historico from "/Header/Botão - Histórico.png";
+import Pesquisa from "/Header/Botão - Pesquisa.png";
+import Reembolso from "/Header/Botão - Reembolso.png";
+import Sair from "/Header/Botão - Sair.png";
 
 function NavBar() {
 

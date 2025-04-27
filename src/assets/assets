@@ -1,6 +1,0 @@
-<script>start("c:\\Users\\adria\\Desktop\\Projeto-Sispar-main\\Projeto-Sispar\\src\\assets\\");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("Dashboard","Dashboard",1,0,"0 B",1745463723,"4/24/25, 12:02:03 AM");</script>
-<script>addRow("Header","Header",1,0,"0 B",1745463723,"4/24/25, 12:02:03 AM");</script>
-<script>addRow("solicitacao","solicitacao",1,0,"0 B",1745463723,"4/24/25, 12:02:03 AM");</script>
-<script>addRow("Tela Login","Tela%20Login",1,0,"0 B",1745463723,"4/24/25, 12:02:03 AM");</script>
